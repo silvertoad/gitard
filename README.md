@@ -1,6 +1,6 @@
 gitard
 ======
 
-Simple git snippet
-
-*.sh snippets for easy coding. Put it in your "~/.bash_profile".
+*.sh snippets for easy coding.
+Copy code from gitard_base.sh to your ~/.bash_profile or use:
+    source "/path/to/gitard_base.sh"
