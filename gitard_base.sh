@@ -5,8 +5,8 @@ alias s="git status"
 alias a="git add"
 alias c="git commit"
 alias l="git log --graph"
-alias pick="git cherry-pick"
-alias reset="git reset --hard HEAD"
+alias p="git cherry-pick"
+alias r="git reset --hard HEAD"
 
 # ammend indexed changes.
 # args: $1 - update message
