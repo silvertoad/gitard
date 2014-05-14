@@ -3,6 +3,7 @@
 # aliases
 alias s="git status"
 alias a="git add"
+alias f="git fetch"
 alias c="git commit"
 alias l="git log --graph"
 alias p="git cherry-pick"
