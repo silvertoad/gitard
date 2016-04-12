@@ -24,7 +24,7 @@ function amend
 function push
 {
    branch=$(git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3);
-   git push origin ${branch}
+   git push origin ${branch} $@
 }
 
 # remove branch from local and remote
