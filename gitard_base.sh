@@ -9,6 +9,26 @@ alias l="git log --graph"
 alias p="git cherry-pick"
 alias r="git reset --hard HEAD"
 
+function rb
+{
+    branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/');
+    git pull --rebase origin ${branch} $@
+}
+
+function rbi
+{
+    branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/');
+    merge_base=$(git merge-base origin/$branch HEAD)
+    git rebase -i $merge_base
+}
+
+
+# extract today tasks logged by user
+function today
+{
+     git log --oneline --format=%s --author="$(git config --get user.name)" --after="$(date +"%Y-%d-%m") 00:00"
+}
+
 # ammend indexed changes.
 # args: $1 - update message
 function amend
@@ -23,7 +43,7 @@ function amend
 # push branch to remote
 function push
 {
-   branch=$(git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3);
+   branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/');
    git push origin ${branch} $@
 }
 
