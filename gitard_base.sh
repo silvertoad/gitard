@@ -26,7 +26,7 @@ function rbi
 # extract today tasks logged by user
 function today
 {
-     git log --oneline --format=%s --author="$(git config --get user.name)" --after="$(date +"%Y-%d-%m") 00:00"
+    git log --oneline --format=%s --author="$(git config --get user.name)" --after="$(date +"%Y-%m-%d") 00:00"
 }
 
 # ammend indexed changes.
